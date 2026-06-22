@@ -400,7 +400,7 @@ p {
   z-index: 1;
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 148px 0 52px;
+  padding: 108px 0 52px;
 }
 
 .hero-content {
