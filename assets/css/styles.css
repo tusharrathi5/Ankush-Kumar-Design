@@ -814,7 +814,7 @@ p {
 
 .review-card {
   display: none;
-  min-height: 310px;
+  min-height: 360px;
   padding: 42px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -837,16 +837,21 @@ p {
   margin-top: 28px;
   color: var(--charcoal);
   font-family: var(--heading);
-  font-size: clamp(1.8rem, 3vw, 3rem);
-  line-height: 1.08;
+  font-size: clamp(1.45rem, 2.45vw, 2.45rem);
+  line-height: 1.16;
 }
 
 .review-card cite {
   display: block;
-  margin-top: 30px;
+  margin-top: 24px;
   color: var(--muted);
   font-style: normal;
   font-weight: 800;
+}
+
+.review-card cite + p {
+  margin-top: 6px;
+  font-size: 0.84rem;
 }
 
 .slider-controls {

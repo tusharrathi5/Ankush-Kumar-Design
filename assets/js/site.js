@@ -1,5 +1,6 @@
 const phoneNumber = "919887709971";
 const whatsappText = encodeURIComponent("Hello Ankush Kumar Design, I would like to book an interior consultation in Jaipur.");
+const googleReviewsUrl = "https://www.google.com/search?sca_esv=ced1fc7aeb71c75a&cs=0&hl=en-IN&sxsrf=APpeQntb4l6BfUomAZSdueitJOA6OEqxuw:1782115684236&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_8QDPiAfVHUcDsEyo_o-lIfiqsqaNwczo15gBhoPjZuAAvGVOf6uQMlris5zmuLKHmHbylQLnQuHqnGHY1UtkKh7z3LUZFmhWCdKbdRAcz9P3nWTqA%3D%3D&q=Ankush+Kumar+Design+Reviews&sa=X&ved=2ahUKEwiNu7qispqVAxX82jgGHdTOE3MQ0bkNegQIIBAF&biw=1440&bih=765&dpr=2";
 
 const projects = [
   {
@@ -126,16 +127,54 @@ const projects = [
 
 const reviews = [
   {
-    text: "Quality of work is awesome and we are really happy with the interior.",
-    author: "Akhilesh Prajapat"
+    text: "Its been a good experience with Ankush Kumar Designer. Value for money. Quality of work is awesome and we are really happy with the interior. Everyone like it. Keep up the good work.",
+    author: "Akhilesh Prajapat",
+    meta: "5 reviews - 6 photos - 4 years ago"
   },
   {
-    text: "Really good experience, extremely helpful.",
-    author: "Ishita Gupta"
+    text: "Osm experience. I like your work and my home elevate in my budget and very beautiful.",
+    author: "Rakesh Meena",
+    meta: "1 review - a year ago"
   },
   {
-    text: "Best customer satisfaction.",
-    author: "Radhey Shyam"
+    text: "Really good experience, extremely helpful. Very understanding and possess good knowledge of interior designing.",
+    author: "Ishita Gupta",
+    meta: "3 reviews - a year ago"
+  },
+  {
+    text: "Best interior designer in Jaipur. Working is superb. Best customer satisfaction.",
+    author: "Radhey Shyam",
+    meta: "1 review - a year ago"
+  },
+  {
+    text: "Fabulous interior designer, and work is so good.",
+    author: "Aman Singhal",
+    meta: "4 reviews - a year ago"
+  },
+  {
+    text: "Very good quality and design and experience.",
+    author: "Rohit Choudhary",
+    meta: "Local Guide - 9 reviews - 15 photos - a year ago"
+  },
+  {
+    text: "Gorgeous looking view and excellent furnituring.",
+    author: "Pankaj Rathor",
+    meta: "3 reviews - a year ago"
+  },
+  {
+    text: "\u0906\u092a \u0915\u0947 \u0926\u094d\u0935\u093e\u0930\u093e \u0926\u0940 \u0917\u0908 \u0938\u0947\u0935\u093e \u0905\u0924\u093f \u092e\u0939\u0924\u094d\u0935\u092a\u0942\u0930\u094d\u0923,\u0905\u0924\u093f \u0906\u0935\u0936\u094d\u092f\u0915 \u0913\u0930 \u0905\u0924\u093f \u0909\u0924\u094d\u0924\u092e \u0939\u0948",
+    author: "Doodi Ruparam",
+    meta: "5 reviews - 1 photo - a year ago"
+  },
+  {
+    text: "Good work and nice design.",
+    author: "Faisal Khan",
+    meta: "1 review - a year ago"
+  },
+  {
+    text: "Best Services in Jaipur. I will recommend to everyone.",
+    author: "Suresh Jangid",
+    meta: "1 review - 1 photo - 4 years ago"
   }
 ];
 
@@ -315,6 +354,7 @@ function initReviews() {
       <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       <p class="quote">&ldquo;${review.text}&rdquo;</p>
       <cite>&mdash; ${review.author}</cite>
+      <p>${review.meta || "Google review"}</p>
     </article>
   `).join("");
 
@@ -359,6 +399,10 @@ function initForms() {
 function hydrateContactLinks() {
   qsa("[data-whatsapp-link]").forEach((link) => {
     link.href = `https://wa.me/${phoneNumber}?text=${whatsappText}`;
+  });
+
+  qsa("[data-google-reviews-link]").forEach((link) => {
+    link.href = googleReviewsUrl;
   });
 }
 
