@@ -1149,6 +1149,7 @@ textarea:focus {
   background: var(--charcoal);
   box-shadow: 0 14px 34px rgba(23, 21, 19, 0.2);
   transition: transform 220ms ease, background 220ms ease;
+  font-size: 0;
 }
 
 .floating-contact a:first-child {
@@ -1158,6 +1159,23 @@ textarea:focus {
 .floating-contact a:hover {
   transform: translateY(-3px);
   background: var(--bronze);
+}
+
+.floating-contact a::before {
+  width: 25px;
+  height: 25px;
+  content: "";
+  background: currentColor;
+  -webkit-mask: var(--contact-icon) center / contain no-repeat;
+  mask: var(--contact-icon) center / contain no-repeat;
+}
+
+.floating-contact a[data-whatsapp-link] {
+  --contact-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16.02 3C8.85 3 3.03 8.72 3.03 15.76c0 2.25.6 4.44 1.73 6.36L3 29l7.06-1.81a13.2 13.2 0 0 0 5.96 1.45C23.18 28.64 29 22.9 29 15.86 29 8.82 23.18 3 16.02 3Zm0 23.45c-1.9 0-3.75-.5-5.38-1.46l-.39-.23-4.18 1.07 1.11-4.01-.26-.41a10.55 10.55 0 0 1-1.67-5.65c0-5.82 4.82-10.56 10.75-10.56 5.93 0 10.76 4.74 10.76 10.56 0 5.9-4.83 10.69-10.74 10.69Zm5.9-7.92c-.32-.16-1.9-.92-2.2-1.02-.3-.11-.51-.16-.73.16-.21.31-.83 1.02-1.02 1.23-.19.21-.38.24-.7.08-.32-.15-1.36-.49-2.6-1.57-.96-.84-1.61-1.88-1.8-2.19-.19-.32-.02-.49.14-.65.15-.14.32-.37.49-.55.16-.19.21-.32.32-.53.1-.21.05-.39-.03-.55-.08-.16-.72-1.72-.99-2.36-.26-.62-.53-.54-.72-.55h-.62c-.22 0-.55.08-.84.39-.29.32-1.1 1.06-1.1 2.57 0 1.52 1.12 2.99 1.28 3.2.16.21 2.2 3.31 5.33 4.64.75.32 1.33.51 1.78.65.75.23 1.43.2 1.97.12.6-.09 1.9-.76 2.17-1.5.27-.74.27-1.38.19-1.5-.08-.13-.29-.21-.61-.37Z'/%3E%3C/svg%3E");
+}
+
+.floating-contact a[href^="tel:"] {
+  --contact-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.03-.24 1.13.37 2.35.57 3.56.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.21.2 2.43.57 3.56.11.35.03.74-.25 1.02l-2.2 2.21Z'/%3E%3C/svg%3E");
 }
 
 .mobile-contact-bar {
